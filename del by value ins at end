@@ -1,4 +1,4 @@
-#delete operation by value
+#delete operation by value but insertion at end
 class Node:
     def __init__(self,data):
         self.data=data
