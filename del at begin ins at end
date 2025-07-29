@@ -1,0 +1,135 @@
+#deletion operation at begin
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+class Linkedlist:
+    def __init__(self):
+        self.head=None
+    def iae(self,data):
+        newnode=Node(data) #converts data as node
+        if not self.head:
+            self.head=newnode
+            return
+        current=self.head
+        while current.next:
+            current=current.next
+        current.next=newnode
+    def deletebegin(self):
+
+        if self.head is None:
+            print("enpty ll")
+        else:
+            print("Deleted node from beginning..",self.head.data)
+            self.head=self.head.next
+            
+    def display(self):
+        current=self.head
+        if not current:
+            print("ll-Empty")
+            return 
+        while current:
+            print(current.data,end="--->")
+            current=current.next
+        print("None")
+ll=Linkedlist() #ll is object for class LinkedList
+while True:
+    print("\n Linked List- Insert At Begin....")
+    print("1.Insert")
+    print("2.Display")
+    print("3.Delete")
+    print("4.Exit")
+    choice=input("Enter your choice:")
+    if choice=='1':
+        data=int(input("Enter A value to insert:"))
+        ll.iae(data)#insert at e
+    elif choice=='2':
+        ll.display()
+    elif choice=='3':
+        ll.deletebegin()
+    elif choice=='4':
+        print("Excited the operation...")
+        break
+    else:
+        print("Enter The Valid Choice....1/2/3/4")
+
+output:
+Linked List- Insert At Begin....
+1.Insert
+2.Display
+3.Delete
+4.Exit
+Enter your choice: 1
+Enter A value to insert: 10
+
+ Linked List- Insert At Begin....
+1.Insert
+2.Display
+3.Delete
+4.Exit
+Enter your choice: 1
+Enter A value to insert: 20
+
+ Linked List- Insert At Begin....
+1.Insert
+2.Display
+3.Delete
+4.Exit
+Enter your choice: 1
+Enter A value to insert: 30
+
+ Linked List- Insert At Begin....
+1.Insert
+2.Display
+3.Delete
+4.Exit
+Enter your choice: 1
+Enter A value to insert: 40
+
+ Linked List- Insert At Begin....
+1.Insert
+2.Display
+3.Delete
+4.Exit
+Enter your choice: 1
+Enter A value to insert: 50
+
+ Linked List- Insert At Begin....
+1.Insert
+2.Display
+3.Delete
+4.Exit
+Enter your choice: 1
+Enter A value to insert: 60
+
+ Linked List- Insert At Begin....
+1.Insert
+2.Display
+3.Delete
+4.Exit
+Enter your choice: 2
+10--->20--->30--->40--->50--->60--->None
+
+ Linked List- Insert At Begin....
+1.Insert
+2.Display
+3.Delete
+4.Exit
+Enter your choice: 3
+Deleted node from beginning.. 10
+
+ Linked List- Insert At Begin....
+1.Insert
+2.Display
+3.Delete
+4.Exit
+Enter your choice: 3
+Deleted node from beginning.. 20
+
+ Linked List- Insert At Begin....
+1.Insert
+2.Display
+3.Delete
+4.Exit
+Enter your choice: 4
+Excited the operation...
