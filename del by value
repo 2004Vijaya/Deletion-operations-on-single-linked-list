@@ -1,0 +1,174 @@
+#delete operation by value
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+class Linkedlist:
+    def __init__(self):
+        self.head=None
+    def iae(self,data):
+        newnode=Node(data) #converts data as node
+        if not self.head:
+            self.head=newnode
+            return
+        current=self.head
+        while current.next:
+            current=current.next
+        current.next=newnode
+    def deletevalue(self,key):
+        current=self.head
+        if not current:
+            print("Empty ll")
+            return
+        if current.data==key:
+            self.head=current.next
+            print(f"{key} deleted from the list")
+            return
+        prev=None
+        while current and current.data!=key:
+            prev=current
+            current=current.next
+        if not current:
+            print(f"{key} not found in ll")
+            return
+        prev.next=current.next
+        print(f"{key} deleted from the linked list")
+            
+    def display(self):
+        current=self.head
+        if not current:
+            print("ll-Empty")
+            return 
+        while current:
+            print(current.data,end="--->")
+            current=current.next
+        print("None")
+ll=Linkedlist() #ll is object for class LinkedList
+while True:
+    print("\n Linked List- Insert At Begin....")
+    print("1.Insert")
+    print("2.Display")
+    print("3.Delete")
+    print("4.Exit")
+    choice=input("Enter your choice:")
+    if choice=='1':
+        data=int(input("Enter A value to insert:"))
+        ll.iae(data)#insert at e
+    elif choice=='2':
+        ll.display()
+    elif choice=='3':
+        key=int(input("Enter the value to be deleted.."))
+        ll.deletevalue(key)
+    elif choice=='4':
+        print("Excited the operation...")
+        break
+    else:
+        print("Enter The Valid Choice....1/2/3/4")
+
+output:
+Linked List- Insert At Begin....
+1.Insert
+2.Display
+3.Delete
+4.Exit
+Enter your choice: 1
+Enter A value to insert: 1
+
+ Linked List- Insert At Begin....
+1.Insert
+2.Display
+3.Delete
+4.Exit
+Enter your choice: 1
+Enter A value to insert: 2
+
+ Linked List- Insert At Begin....
+1.Insert
+2.Display
+3.Delete
+4.Exit
+Enter your choice: 1
+Enter A value to insert: 3
+
+ Linked List- Insert At Begin....
+1.Insert
+2.Display
+3.Delete
+4.Exit
+Enter your choice: 1
+Enter A value to insert: 4
+
+ Linked List- Insert At Begin....
+1.Insert
+2.Display
+3.Delete
+4.Exit
+Enter your choice: 1
+Enter A value to insert: 5
+
+ Linked List- Insert At Begin....
+1.Insert
+2.Display
+3.Delete
+4.Exit
+Enter your choice: 1
+Enter A value to insert: 6
+
+ Linked List- Insert At Begin....
+1.Insert
+2.Display
+3.Delete
+4.Exit
+Enter your choice: 1
+Enter A value to insert: 7
+
+ Linked List- Insert At Begin....
+1.Insert
+2.Display
+3.Delete
+4.Exit
+Enter your choice: 1
+Enter A value to insert: 8
+
+ Linked List- Insert At Begin....
+1.Insert
+2.Display
+3.Delete
+4.Exit
+Enter your choice: 2
+1--->2--->3--->4--->5--->6--->7--->8--->None
+
+ Linked List- Insert At Begin....
+1.Insert
+2.Display
+3.Delete
+4.Exit
+Enter your choice: 3
+Enter the value to be deleted.. 6
+6 deleted from the linked list
+
+ Linked List- Insert At Begin....
+1.Insert
+2.Display
+3.Delete
+4.Exit
+Enter your choice: 3
+Enter the value to be deleted.. 8
+8 deleted from the linked list
+
+ Linked List- Insert At Begin....
+1.Insert
+2.Display
+3.Delete
+4.Exit
+Enter your choice: 3
+Enter the value to be deleted.. 10
+10 not found in ll
+
+ Linked List- Insert At Begin....
+1.Insert
+2.Display
+3.Delete
+4.Exit
+Enter your choice: 4
+Excited the operation...
